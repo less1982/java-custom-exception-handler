@@ -1,8 +1,10 @@
 # java-custom-exception-handler
-A robust calculator implementation demonstrating custom exception handling and input validation through user-defined Exception classes.
+A comprehensive Java error-handling framework demonstrating custom Exception hierarchies, behavioural validation, and state-based error codes for financial simulations.
 
-The Goal: To build a functional arithmetic engine that goes beyond basic calculations by implementing a custom error-reporting layer. The goal was to ensure the application could distinguish between mathematical errors (like invalid operations) and data entry errors (like negative numbers).
+The Goal: To demonstrate a sophisticated approach to error handling in Java by building a "defensive" code layer. The system is designed to identify and manage specific data failures, such as unauthorized account access or invalid mathematical operations, ensuring application stability.
 
-The Challenge: Standard Java exceptions are often too generic for specific business logic. The challenge was to create specialized error types that provide the end-user with clear, actionable feedback when they enter an invalid character or a prohibited negative value.
+The Challenge: Standard Java exceptions are often too generic to describe specific business logic failures. The challenge was to design a custom exception architecture that could carry unique metadata, such as Error Codes, to provide precise debugging information in a simulated enterprise environment.
 
-The Solution: I extended the base Exception class to create CustomValidationException and InvalidOperationException. By using the throws keyword and throw new logic within the Calculator class, I created a predictable error handling flow that protects the application's stability.
+The Solution: I implemented two distinct validation patterns: 
+  - Logic Validation: Utilizing CustomValidationException and InvalidOperationException to catch illegal inputs (like negative values) before they reach the calculation engine.
+  - State Based Validation: Implementing a robust AccountException that stores integer error codes. This allows the AccountExampleTest driver to catch specific failures and report them with high granularity, mimicking real world financial software behaviour.
